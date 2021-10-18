@@ -1,0 +1,26 @@
+<p>vacancy-list works!</p>
+<div class="container">
+    
+    <table class="table table-striped">
+        <thead>
+            <th>id</th>
+            <th>title</th>
+            <th>breakfast</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vacancy of vacanylist">
+                <td>
+                    {{vacancy.id}}
+                </td>
+                <td>
+                    {{vacancy.title}}
+                </td>
+                <td>
+                    {{vacancy.othersBenefit}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
+
