@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin("*")
 @RestController
@@ -39,17 +41,33 @@ public class VacancyController {
     public ResponseEntity<vacancy> updateVacancy(@PathVariable long id,@RequestBody vacancy vac){
         vacancy updateVacancy =vacancyrepo.findById(id).orElseThrow(()->new ResourceNotFoundException("vacancy not found" +id));
         updateVacancy.setTitle(vac.getTitle());
+        updateVacancy.setJobType(vac.getJobType());
+        updateVacancy.setOthersBenefit(vac.getOthersBenefit());
+        updateVacancy.setSalMax(vac.getSalMax());
+        updateVacancy.setSalMin(vac.getSalMin());
         updateVacancy.setJobLocation(vac.getJobLocation());
         updateVacancy.setExperienceMax(vac.getExperienceMax());
+        updateVacancy.setNegotiable(vac.isNegotiable());
+        updateVacancy.setRelevantEducation(vac.getRelevantEducation());
+        updateVacancy.setVcncyTot(vac.getVcncyTot());
+        updateVacancy.setJobNature(vac.getJobNature());
+        updateVacancy.setNoExperience(vac.getNoExperience());
         vacancyrepo.save(updateVacancy);
         return ResponseEntity.ok(updateVacancy);
     }
 
     @DeleteMapping("{id}")
-    public String deleteVacancy(@PathVariable long id){
+//    public String deleteVacancy(@PathVariable long id){
+//        vacancy vac=vacancyrepo.findById(id).orElseThrow(()->new ResourceNotFoundException("not"+id));
+//        vacancyrepo.delete(vac);
+//
+//    }
+    public ResponseEntity<Map<String,Boolean>>deleteVacancy(@PathVariable Long id){
         vacancy vac=vacancyrepo.findById(id).orElseThrow(()->new ResourceNotFoundException("not"+id));
         vacancyrepo.delete(vac);
-        return "deleted";
+        Map<String,Boolean>response=new HashMap<>();
+        response.put("deleted",Boolean.TRUE);
+        return ResponseEntity.ok(response);
     }
 
 

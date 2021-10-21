@@ -1,26 +1,51 @@
-<p>vacancy-list works!</p>
-<div class="container">
-    
-    <table class="table table-striped">
-        <thead>
-            <th>id</th>
-            <th>title</th>
-            <th>breakfast</th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let vacancy of vacanylist">
-                <td>
-                    {{vacancy.id}}
-                </td>
-                <td>
-                    {{vacancy.title}}
-                </td>
-                <td>
-                    {{vacancy.othersBenefit}}
-                </td>
+
+
+   
+      <h2>Table of vacancy</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Job Type</th>
+              <th>Salary maximum</th>
+              <th>Salary minimum</th>
+              <th>Others Benefit</th>
+              <th>no_experience</th>
+              <th>Job nature</th>
+              <th>job Location</th>
+              <th>Negotiable</th>
+              <th>Total Vacancy</th>
+              <th>Action</th>
+              
             </tr>
-        </tbody>
-    </table>
+          </thead>
+          <tbody>
+            <tr *ngFor="let vacancy of vacancylist">
+              <th scope="row">{{vacancy.id}}</th>
+              <td>{{vacancy.title}}</td>
+              <td>{{vacancy.jobType}}</td>
+              <td>{{vacancy.salMax}}</td>
+              <td>{{vacancy.salMin}}</td>
+              <td>{{vacancy.othersBenefit}}</td>
+              <td>{{vacancy.noExperience}}</td>
+              <td>{{vacancy.jobNature}}</td>
+              <td>{{vacancy.jobLocation}}</td>
+              <td *ngIf="vacancy.negotiable==1"><i class="fa fa-check text-success" ></i></td>
+              <td *ngIf="vacancy.negotiable==0"><i class="fa fa-times text-danger" ></i></td>
+              <td>{{vacancy.vcncyTot}}</td>
+              <td>
+                <button (click)= "updateVacancy(vacancy.id)" class="btn btn-info" style="margin-bottom: 2px;"><i class="fa fa-edit"></i></button>
+                <button (click)= "deleteVacancy(vacancy.id)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+              </td>
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>
+      
+     
     
-</div>
+
 

@@ -1,0 +1,107 @@
+
+<div class="container">
+    
+      
+      <form (ngSubmit)="onSubmit()">
+          <h1>Should you have any questions, please do not hesitate to contact me :</h1>
+          
+        <div class="contentform">
+          <div id="sendmessage"> Your message has been sent successfully. Thank you. </div>
+    
+    
+          <div class="leftcontact">
+                <div class="form-group">
+                  <p>Title<span>*</span></p>
+                  <span class="icon-case"><i class="fa fa-male"></i></span>
+                    <input type="text" name="title" id="nom" data-rule="required" [(ngModel)]="vacancy.title">
+                    <div class="validation"></div>
+           </div> 
+    
+                <div class="form-group">
+                <p>relevantEducation <span>*</span></p>
+                <span class="icon-case"><i class="fa fa-user"></i></span>
+            <input type="text" name="relevantEducation" id="relevantEducation" data-rule="required" [(ngModel)]="vacancy.relevantEducation">
+                    <div class="validation"></div>
+          </div>
+    
+          <div class="form-group">
+          <p>Salary maximum <span>*</span></p>	
+          <span class="icon-case"><i class="fa fa-money"></i></span>
+                    <input type="number" name="salMax" id="salMax" data-rule="email" [(ngModel)]="vacancy.salMax">
+                    <div class="validation"></div>
+          </div>	
+    
+          <div class="form-group">
+          <p>jobNature <span>*</span></p>
+          <span class="icon-case"><i class="fa fa-home"></i></span>
+            <input type="text" name="jobNature" id="jobNature" data-rule="required" [(ngModel)]="vacancy.jobNature">
+                    <div class="validation"></div>
+          </div>
+    
+          <div class="form-group">
+            <p>Experience <span>*</span></p>  
+            <span class="icon-case"><i class="fa fa-calendar-times-o"></i></span>       
+              <input type="number" name="noExperience" id="noExperience" [(ngModel)]="vacancy.noExperience">
+              <div class="validation"></div>
+                     
+            </div>
+    
+          <div class="form-group">
+          <p>vcncyTot <span>*</span></p>
+          <span class="icon-case"><i class="fa fa-user-circle-o"></i></span>
+            <input type="text" name="vcncyTot" id="postal" data-rule="required" [(ngModel)]="vacancy.vcncyTot">
+                    <div class="validation"></div>
+          </div>	
+    
+    
+    
+      </div>
+    
+      <div class="rightcontact">	
+    
+          <div class="form-group">
+          <p>jobType <span>*</span></p>
+          <span class="icon-case"><i class="fa fa-building-o"></i></span>
+            <input type="text" name="jobType" id="jobType" data-rule="required" [(ngModel)]="vacancy.jobType">
+                    <div class="validation"></div>
+          </div>	
+          
+          <div class="form-group">
+          <p>negotiable <span>*</span></p>
+          
+          <label>Yes</label>
+          
+            <input type="checkbox" name="negotiable" id="negotiable" value="1" [(ngModel)]="vacancy.negotiable">
+            <div class="validation"></div>
+                   
+          </div>
+    
+          <div class="form-group">
+            <p>Salary minimum <span>*</span></p>	
+            <span class="icon-case"><i class="fa fa-money"></i></span>
+                      <input type="number" name="salMin" id="salMin" data-rule="required" [(ngModel)]="vacancy.salMin">
+                      <div class="validation"></div>
+            </div>
+    
+          <div class="form-group">
+          <p>jobLocation <span>*</span></p>	
+          <span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+                    <input type="text" name="jobLocation" id="jobLocation" data-rule="required" [(ngModel)]="vacancy.jobLocation">
+                    <div class="validation"></div>
+          </div>
+        
+          <div class="form-group">
+          <p>othersBenefit <span>*</span></p>
+          <span class="icon-case"><i class="fa fa-comments-o"></i></span>
+                    <textarea name="othersBenefit" rows="14" data-rule="required" [(ngModel)]="vacancy.othersBenefit"></textarea>
+                    <div class="validation"></div>
+          </div>	
+      </div>
+      </div>
+    <button type="submit" class="bouton-contact">Send</button>
+      
+    </form>	
+    
+      
+   
+</div>
