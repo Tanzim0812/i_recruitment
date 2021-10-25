@@ -1,0 +1,68 @@
+
+<div class="container">
+    
+      
+    <form #userForm="ngForm" (ngSubmit)="onSubmitapplicant()" >
+      
+
+        <h1>Should you have any questions, please do not hesitate to contact me :</h1>
+        
+      <div class="contentform">
+        <div id="sendmessage"> Your message has been sent successfully. Thank you. </div>
+  
+  
+        <div class="leftcontact">
+              <div class="form-group">
+                <p>Title<span>*</span> <span *ngIf="title.invalid && title.touched"> Title is required</span></p>
+                <span class="icon-case"><i class="fa fa-male"></i></span>
+                  <input required #title="ngModel" type="text" name="title" id="nom" data-rule="required" [(ngModel)]="appli.title">
+               
+         </div> 
+  
+              <div class="form-group">
+              <p>first name <span>*</span></p>
+              <span class="icon-case"><i class="fa fa-book"></i></span>
+                    <input type="text" name="firstName" id="firstName" data-rule="required" [(ngModel)]="appli.firstName">
+                  <div class="validation"></div>
+        </div>
+  
+        
+        <div class="form-group">
+            <p>middleName  <span>*</span></p>
+            <span class="icon-case"><i class="fa fa-book"></i></span>
+                  <input type="text" name="middleName" id="middleName" data-rule="required" [(ngModel)]="appli.middleName">
+                <div class="validation"></div>
+      </div>
+
+      <div class="form-group">
+        <p>lastname  <span>*</span></p>
+        <span class="icon-case"><i class="fa fa-book"></i></span>
+              <input type="text" name="lastname" id="lastname" data-rule="required" [(ngModel)]="appli.lastname">
+            <div class="validation"></div>
+      </div>
+
+      <div class="form-group">
+        <p>salCurr  <span>*</span></p>
+        <span class="icon-case"><i class="fa fa-book"></i></span>
+              <input type="number" name="salCurr" id="salCurr" data-rule="required" [(ngModel)]="appli.salCurr">
+            <div class="validation"></div>
+      </div>
+
+      <div class="form-group">
+        <p>salExpected  <span>*</span></p>
+        <span class="icon-case"><i class="fa fa-book"></i></span>
+              <input type="number" name="salExpected" id="salExpected" data-rule="required" [(ngModel)]="appli.salExpected">
+            <div class="validation"></div>
+      </div>
+  
+    </div>
+  
+    
+    </div>
+  <button [disabled]="userForm.form.invalid" type="submit" class="bouton-contact">Send</button>
+    
+  </form>	
+  
+    
+ 
+</div>

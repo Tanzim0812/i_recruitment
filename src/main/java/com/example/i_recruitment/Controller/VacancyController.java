@@ -23,6 +23,7 @@ public class VacancyController {
     //get all data of the table
     @GetMapping
     public List<vacancy> getAllVacancy(){
+
         return vacancyrepo.findAll();
     }
     //insert vacancy data
@@ -57,11 +58,6 @@ public class VacancyController {
     }
 
     @DeleteMapping("{id}")
-//    public String deleteVacancy(@PathVariable long id){
-//        vacancy vac=vacancyrepo.findById(id).orElseThrow(()->new ResourceNotFoundException("not"+id));
-//        vacancyrepo.delete(vac);
-//
-//    }
     public ResponseEntity<Map<String,Boolean>>deleteVacancy(@PathVariable Long id){
         vacancy vac=vacancyrepo.findById(id).orElseThrow(()->new ResourceNotFoundException("not"+id));
         vacancyrepo.delete(vac);

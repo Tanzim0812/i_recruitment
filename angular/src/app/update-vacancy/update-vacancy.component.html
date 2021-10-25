@@ -2,7 +2,8 @@
 <div class="container">
     
       
-  <form (ngSubmit)="onSubmt()">
+  <form (ngSubmit)="onSubmt()" #userform="ngForm">
+    {{userform.form.valid}}
       <h1>Should you have any questions, please do not hesitate to contact me :</h1>
       
     <div class="contentform">

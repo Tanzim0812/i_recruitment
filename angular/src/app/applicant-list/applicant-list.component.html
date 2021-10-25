@@ -1,0 +1,48 @@
+
+
+   
+      <h2>Table of Applicant</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>firstName</th>
+              <th>firstNameBng</th>
+              <th>middleName</th>
+              <th>lastname</th>
+              <th>fatherName</th>
+              <th>motherName</th>
+              <th>salCurr</th>
+              <th>salExpected</th>
+              <th>Action</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let appl of applicantlist">
+              <th scope="row">{{appl.id}}</th>
+              <td>{{appl.title}}</td>
+              <td>{{appl.firstName}}</td>
+              <td>{{appl.firstNameBng}}</td>
+              <td>{{appl.middleName}}</td>
+              <td>{{appl.lastname}}</td>
+              <td>{{appl.fatherName}}</td>
+              <td>{{appl.motherName}}</td>
+              <td>{{appl.salCurr}}</td>
+              <td>{{appl.salExpected}}</td>
+              <td>
+                
+                
+              </td>
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>
+      
+     
+    
+
+
