@@ -17,4 +17,14 @@ export class ApplicantService {
   createApplicant(appli:Applicant): Observable<Object>{
     return this.httpclient.post(`${this.baseUrl}`,appli);
   }
+  getApplicantById(id:number):Observable<Applicant>{
+    return this.httpclient.get<Applicant>(`${this.baseUrl}/${id}`);
+  }
+  updateApplicant(id:number,appli:Applicant):Observable<Object>{
+    return this.httpclient.put(`${this.baseUrl}/${id}`,appli);
+  }
+  
+  deleteApplicant(id:number):Observable<Object>{
+    return this.httpclient.delete(`${this.baseUrl}/${id}`);
+  }
 }

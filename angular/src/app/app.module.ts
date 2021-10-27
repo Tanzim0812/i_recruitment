@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { UpdateVacancyComponent } from './update-vacancy/update-vacancy.component';
 import { ApplicantListComponent } from './applicant-list/applicant-list.component';
 import { CreateApplicantComponent } from './create-applicant/create-applicant.component';
+import { UpdateApplicantComponent } from './update-applicant/update-applicant.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CreateApplicantComponent } from './create-applicant/create-applicant.co
     CreateVacancyComponent,
     UpdateVacancyComponent,
     ApplicantListComponent,
-    CreateApplicantComponent
+    CreateApplicantComponent,
+    UpdateApplicantComponent
   ],
   imports: [
     BrowserModule,

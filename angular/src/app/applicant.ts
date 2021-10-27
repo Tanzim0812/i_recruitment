@@ -1,4 +1,6 @@
 export class Applicant {
+   
+    
     id!: number;
     firstName!:string;
     firstNameBng!:string;

@@ -18,13 +18,25 @@ export class ApplicantListComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-   this.getVacancy();
+   this.getApplicant();
   }
-  private getVacancy(){
+  private getApplicant(){
     this.appservice.getApplicantList().subscribe(data =>{
       this.applicantlist=data;
     })
   }
+
+  updateApplicant(id:number){
+    this.router.navigate(['update-applicant',id]);
+}
+
+deleteApplicant(id:number){
+  this.appservice.deleteApplicant(id).subscribe(data => {
+    console.log(data);
+    this.getApplicant();
+    //this.router.navigate(['/vacancy']);
+  })
+}
 
 
 }

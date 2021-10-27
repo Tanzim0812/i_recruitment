@@ -40,7 +40,7 @@ public class ApplicantController {
 
     //get data by id
     @GetMapping("{id}")
-    public ResponseEntity<applicant> getallVacancy(@PathVariable long id){
+    public ResponseEntity<applicant> getApplicantById(@PathVariable long id){
         applicant apc= applicantrepo.findById(id).orElseThrow(()-> new ResourceNotFoundException("applicant not found" +id));
         return ResponseEntity.ok(apc);
     }

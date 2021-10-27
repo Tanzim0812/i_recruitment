@@ -32,12 +32,12 @@
               <td>{{vacancy.noExperience}}</td>
               <td>{{vacancy.jobNature}}</td>
               <td>{{vacancy.jobLocation}}</td>
-              <td *ngIf="vacancy.negotiable==1"><i class="fa fa-check text-success" ></i></td>
-              <td *ngIf="vacancy.negotiable==0"><i class="fa fa-times text-danger" ></i></td>
+              <td *ngIf="vacancy.negotiable==1"><i class="fa fa-check text-success"></i></td>
+              <td *ngIf="vacancy.negotiable==0"><i class="fa fa-times text-danger"></i></td>
               <td>{{vacancy.vcncyTot}}</td>
               <td>
                 <button (click)= "updateVacancy(vacancy.id)" class="btn btn-info" style="margin-bottom: 2px;"><i class="fa fa-edit"></i></button>
-                <button (click)= "deleteVacancy(vacancy.id)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                <button (click)= "deleteVacancy(vacancy.id)" class="btn btn-danger" onclick="return confirm('Sure?')"><i class="fa fa-trash"></i></button>
                 
               </td>
             </tr>
