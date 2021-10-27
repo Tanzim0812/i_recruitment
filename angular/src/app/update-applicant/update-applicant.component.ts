@@ -33,8 +33,6 @@ export class UpdateApplicantComponent implements OnInit {
    
   }
  
-  
-
   gotoup(){
     this.router.navigate(['/applicant']);
   }

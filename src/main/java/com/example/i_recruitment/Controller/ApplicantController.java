@@ -34,6 +34,13 @@ public class ApplicantController {
     public ResponseEntity<applicant> updateApplicant(@PathVariable long id,@RequestBody applicant apc) {
         applicant updateApplicant = applicantrepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("applicant not found" + id));
         updateApplicant.setFirstName(apc.getFirstName());
+        updateApplicant.setTitle(apc.getTitle());
+        updateApplicant.setSalCurr(apc.getSalCurr());
+        updateApplicant.setSalExpected(apc.getSalExpected());
+        updateApplicant.setFirstName(apc.getFirstName());
+        updateApplicant.setFirstNameBng(apc.getFirstNameBng());
+        updateApplicant.setMiddleName(apc.getMiddleName());
+        updateApplicant.setMiddleNameBng(apc.getMiddleNameBng());
         applicantrepo.save(updateApplicant);
         return ResponseEntity.ok(updateApplicant);
     }

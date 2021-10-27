@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { Applicant } from '../applicant';
 import { ApplicantService } from '../applicant.service';
+
+
 @Component({
   selector: 'app-applicant-list',
   templateUrl: './applicant-list.component.html',
@@ -28,15 +31,20 @@ export class ApplicantListComponent implements OnInit {
 
   updateApplicant(id:number){
     this.router.navigate(['update-applicant',id]);
-}
+  }
+  
 
 deleteApplicant(id:number){
+ 
+  if(confirm("Are you sure to delete")){
+  
   this.appservice.deleteApplicant(id).subscribe(data => {
     console.log(data);
     this.getApplicant();
-    //this.router.navigate(['/vacancy']);
-  })
+
+    
+});
+
 }
-
-
+}
 }
