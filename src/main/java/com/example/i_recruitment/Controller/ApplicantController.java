@@ -34,13 +34,56 @@ public class ApplicantController {
     public ResponseEntity<applicant> updateApplicant(@PathVariable long id,@RequestBody applicant apc) {
         applicant updateApplicant = applicantrepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("applicant not found" + id));
         updateApplicant.setFirstName(apc.getFirstName());
-        updateApplicant.setTitle(apc.getTitle());
-        updateApplicant.setSalCurr(apc.getSalCurr());
-        updateApplicant.setSalExpected(apc.getSalExpected());
-        updateApplicant.setFirstName(apc.getFirstName());
         updateApplicant.setFirstNameBng(apc.getFirstNameBng());
+
         updateApplicant.setMiddleName(apc.getMiddleName());
         updateApplicant.setMiddleNameBng(apc.getMiddleNameBng());
+
+        updateApplicant.setLastname(apc.getLastname());
+        updateApplicant.setLastNameBng(apc.getLastNameBng());
+
+        updateApplicant.setNickName(apc.getNickName());
+        updateApplicant.setNickNameBng(apc.getNickNameBng());
+
+        updateApplicant.setFatherName(apc.getFatherName());
+        updateApplicant.setFatherNameBng(apc.getFatherNameBng());
+
+        updateApplicant.setMotherName(apc.getMotherName());
+        updateApplicant.setMotherNameBng(apc.getMotherNameBng());
+
+        updateApplicant.setSpouseName(apc.getSpouseName());
+        updateApplicant.setSpouseNameBng(apc.getSpouseNameBng());
+
+        updateApplicant.setCareerSummary(apc.getCareerSummary());
+
+        updateApplicant.setTitle(apc.getTitle());
+        updateApplicant.setTitleBng(apc.getTitleBng());
+
+        updateApplicant.setNationalIdentityNumber(apc.getNationalIdentityNumber());
+
+        updateApplicant.setExperienceYear(apc.getExperienceYear());
+
+        updateApplicant.setObjective(apc.getObjective());
+
+        updateApplicant.setTinNumber(apc.getTinNumber());
+
+        updateApplicant.setPresentAddress(apc.getPresentAddress());
+        updateApplicant.setPermanentAddress(apc.getPermanentAddress());
+
+        updateApplicant.setSalCurr(apc.getSalCurr());
+        updateApplicant.setSalExpected(apc.getSalExpected());
+
+       updateApplicant.setDob(apc.getDob());
+       updateApplicant.setLastLoginDate(apc.getLastLoginDate());
+
+       updateApplicant.setCv(apc.getCv());
+       updateApplicant.setPic(apc.getPic());
+
+       updateApplicant.setCvFileTitle(apc.getCvFileTitle());
+       updateApplicant.setCreateDate(apc.getCreateDate());
+
+       updateApplicant.setUpdateDateTime(apc.getUpdateDateTime());
+
         applicantrepo.save(updateApplicant);
         return ResponseEntity.ok(updateApplicant);
     }
